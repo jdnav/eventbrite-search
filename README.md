@@ -1,3 +1,14 @@
+
+## Project info
+
+This project uses EventBrite API to fetch all events from different categories. The user can search for events in real time.
+
+## Technologial Scope
+
+This project uses Context API (16.3+), classes, stateless functional components, state and async functions to fetch data.
+
+## General info
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
