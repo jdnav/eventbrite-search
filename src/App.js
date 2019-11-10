@@ -1,12 +1,13 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Header from "./components/Header";
+import CategoryProvider from "./context/CategoriesContext";
 
 function App() {
 
   return (
-    <Fragment>
+    <CategoryProvider>
       <Header title="Search for events with Eventbrite API"/>
-    </Fragment>
+    </CategoryProvider>
   );
 }
 
