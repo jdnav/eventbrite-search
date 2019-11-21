@@ -6,6 +6,14 @@ class Form extends Component {
     name: "",
     category: ""
   };
+
+  // If user adds event or category...
+  getEventData = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
     return (
       <form>
@@ -23,12 +31,18 @@ class Form extends Component {
               className="uk-input"
               type="text"
               placeholder="Name of the event or city"
+              onChange={this.getEventData}
             />
           </div>
           {/** Select for category */}
           <div className="uk-margin" uk-margin="true">
-            <select className="uk-select" name="category">
+            <select
+              className="uk-select"
+              name="category"
+              onChange={this.getEventData}
+            >
               {/** Options come from backend */}
+              <option value="">-- Select Category --</option>
               <CategoriesConsumer>
                 {value => {
                   return value.categories.map(category => (
