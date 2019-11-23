@@ -1,19 +1,20 @@
 // Stateless functional component
-import React from 'react';
+import React from "react";
+import Event from "./Event";
 import { EventsConsumer } from "../context/EventsContext";
 
 const ListEvents = () => {
-    return (
-        <div className="uk-child-width-1-3@m" uk-grid="true">
-            <EventsConsumer>
-                {(value) =>{
-                    return (
-                        <h1>List event</h1>                        
-                    )
-                }}
-            </EventsConsumer>
-        </div>
-    );
+  return (
+    <div className="uk-child-width-1-3@m" uk-grid="true">
+      <EventsConsumer>
+        {value => {
+          return value.events.map(event => (
+            <Event key={event.key} event={event} />
+          ));
+        }}
+      </EventsConsumer>
+    </div>
+  );
 };
 
 export default ListEvents;
